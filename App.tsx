@@ -10,6 +10,7 @@ import ResourcesPage from './components/pages/ResourcesPage';
 import FAQPage from './components/pages/FAQPage';
 import LedgerDemoPage from './components/pages/LedgerDemoPage';
 import BackToTopButton from './components/BackToTopButton';
+import AnnouncementBar from './components/AnnouncementBar';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>(Page.Home);
@@ -42,9 +43,12 @@ function App() {
 
   return (
     <div className="text-brand-light">
+      <AnnouncementBar />
       <Header currentPage={currentPage} navigateTo={navigateTo} />
       <main>
-        {renderPage()}
+        <div key={currentPage} className="animate-fade-in">
+          {renderPage()}
+        </div>
       </main>
       <Footer navigateTo={navigateTo} />
       <BackToTopButton />

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Page } from '../types';
 
@@ -17,13 +16,17 @@ const NavLink: React.FC<{
     return (
         <button
             onClick={() => navigateTo(page)}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+            className={`relative group px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
                 isActive 
                 ? 'text-brand-gold' 
                 : 'text-brand-light hover:text-brand-gold'
             }`}
         >
             {children}
+            <span className={
+                `absolute bottom-0 left-0 w-full h-0.5 bg-brand-gold transform transition-transform duration-300 ease-out origin-left 
+                ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`
+            } />
         </button>
     );
 };
@@ -36,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, navigateTo }) => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <div className="flex-shrink-0">
-                        <button onClick={() => navigateTo(Page.Home)} className="flex items-center">
+                        <button onClick={() => navigateTo(Page.Home)} className="flex items-center transition-transform duration-300 transform hover:scale-105">
                            <img src="https://i.postimg.cc/GpLtscmX/IMG_0815.png" alt="Keystone Financial Logo" className="h-16 w-auto" />
                         </button>
                     </div>

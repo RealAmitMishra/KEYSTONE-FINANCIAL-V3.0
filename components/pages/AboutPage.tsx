@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TEAM_MEMBERS } from '../../constants';
 import SectionHeader from '../SectionHeader';
@@ -31,8 +30,8 @@ const AboutPage: React.FC = () => {
                             <h2 className="text-3xl md:text-4xl font-serif font-bold text-center text-white">Meet Our Team</h2>
                             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
                                 {TEAM_MEMBERS.map((member) => (
-                                    <div key={member.name} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
-                                        <img className="h-48 w-48 rounded-full object-cover flex-shrink-0 shadow-lg" src={member.imageUrl} alt={member.name} />
+                                    <div key={member.name} className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                                        <img className="h-48 w-48 rounded-full object-cover flex-shrink-0 shadow-lg transition-transform duration-300 group-hover:scale-105" src={member.imageUrl} alt={member.name} />
                                         <div>
                                             <h3 className="text-2xl font-bold font-serif text-brand-gold">{member.name}</h3>
                                             <p className="text-lg text-gray-300">{member.role}</p>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { SERVICES } from '../../constants';
 import { Service } from '../../types';
@@ -60,7 +59,7 @@ const ServicesPage: React.FC = () => {
                     <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {SERVICES.map((service, index) => (
                             <FadeInOnScroll key={service.title} delay={index * 100}>
-                                <button onClick={() => setSelectedService(service)} className="bg-gray-900/40 p-8 rounded-xl border border-gray-700 text-center hover:border-brand-gold hover:scale-105 transform transition-all duration-300 flex flex-col items-center h-full">
+                                <button onClick={() => setSelectedService(service)} className="bg-gray-900/40 p-8 rounded-xl border border-gray-700 text-center hover:border-brand-gold hover:-translate-y-2 transform transition-all duration-300 flex flex-col items-center h-full">
                                     <div className="flex-shrink-0">{service.icon}</div>
                                     <h3 className="mt-6 text-xl font-serif font-bold text-brand-gold">{service.title}</h3>
                                     <p className="mt-2 text-gray-400 flex-grow">{service.description}</p>

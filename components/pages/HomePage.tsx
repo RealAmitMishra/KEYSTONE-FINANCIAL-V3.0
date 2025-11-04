@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Page } from '../../types';
 import { SERVICES, TEAM_MEMBERS } from '../../constants';
@@ -25,16 +24,16 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
                     {/* Hero Section */}
                     <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-20">
                         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-                           <FadeInOnScroll>
-                                <h1 className="text-4xl md:text-6xl font-serif font-extrabold tracking-tight">
+                           
+                                <h1 className="text-4xl md:text-6xl font-serif font-extrabold tracking-tight animate-fade-in-up">
                                     <span className="block bg-clip-text text-transparent bg-gradient-to-r from-gray-200 via-brand-gold to-gray-200 pb-4">
                                         Clarity & Confidence in Your Finances
                                     </span>
                                 </h1>
-                                <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">
+                                <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
                                     Keystone Financial provides expert bookkeeping, tax, and business advisory services with a personal, local touch. We help North Texas businesses thrive.
                                 </p>
-                                <div className="mt-10 flex flex-wrap justify-center gap-4">
+                                <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '400ms' }}>
                                     <button 
                                         onClick={() => setIsModalOpen(true)}
                                         className="inline-block bg-brand-gold text-brand-dark font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-transform transform hover:scale-105"
@@ -48,7 +47,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
                                         Explore Our Services
                                     </button>
                                 </div>
-                            </FadeInOnScroll>
+                            
                         </div>
                     </section>
                     
@@ -61,7 +60,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
                             />
                             <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                                 {SERVICES.map((service) => (
-                                    <div key={service.title} className="bg-gray-900/40 p-8 rounded-xl border border-gray-700 text-center hover:border-brand-gold transition-colors duration-300">
+                                    <div key={service.title} className="bg-gray-900/40 p-8 rounded-xl border border-gray-700 text-center hover:border-brand-gold transition-all duration-300 transform hover:-translate-y-2">
                                         <div className="flex justify-center">{service.icon}</div>
                                         <h3 className="mt-6 text-xl font-serif font-bold text-brand-gold">{service.title}</h3>
                                         <p className="mt-2 text-gray-400">{service.description}</p>
@@ -127,8 +126,8 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
                             />
                             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
                                 {TEAM_MEMBERS.map((member) => (
-                                    <div key={member.name} className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
-                                        <img className="h-40 w-40 rounded-full object-cover flex-shrink-0 shadow-lg" src={member.imageUrl} alt={member.name} />
+                                    <div key={member.name} className="group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-8">
+                                        <img className="h-40 w-40 rounded-full object-cover flex-shrink-0 shadow-lg transition-transform duration-300 group-hover:scale-105" src={member.imageUrl} alt={member.name} />
                                         <div>
                                             <h3 className="text-2xl font-bold font-serif text-brand-gold">{member.name}</h3>
                                             <p className="text-lg text-gray-300">{member.role}</p>
